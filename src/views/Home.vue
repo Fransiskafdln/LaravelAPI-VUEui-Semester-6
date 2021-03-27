@@ -10,6 +10,8 @@
       <th scope="col">Last</th>  
       <th scope="col">Handle</th>
     </tr>
+
+    
   </thead>
   <tbody>
     <tr>
@@ -33,6 +35,7 @@
 </table>  
   </div>
 </template>
+
 
 <script>
 // @ is an alias to /src
