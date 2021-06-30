@@ -5,6 +5,7 @@
     <router-link class="btn btn-primary" to="/createfriends"
       >Add Friends</router-link
     >
+    <Cardfriends :friends="friends" />>
     <table class="table">
       <thead>
         <tr>
@@ -50,7 +51,7 @@ export default {
     let friends = ref([])
 
     onMounted(() => {
-      axios.get('http://pia.labirin.co.id/api/friends')
+      axios.get('http://127.0.0.1:8000/api/friends')
       .then(response => {
         friends.value = response.data.data
       })
@@ -60,7 +61,7 @@ export default {
     })
 
     function friendDelete(id){
-      axios.delete('http://pia.labirin.co.id/api/friends/${id}')
+      axios.delete('http://127.0.0.1:8000/api/friends/${id}')
       .then (() => {
         let z = this.friends.map(friends => friends.id).indexOf(id);
         this.friends.splice(z, 1)
